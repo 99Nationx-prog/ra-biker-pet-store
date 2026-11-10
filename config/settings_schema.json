@@ -1,0 +1,27 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Ra Biker Pet Store",
+    "theme_author": "Ra Biker",
+    "theme_version": "0.1.0",
+    "theme_documentation_url": "https://shopify.dev/docs/storefronts/themes",
+    "theme_support_url": "https://help.shopify.com/"
+  },
+  {
+    "name": "Brand",
+    "settings": [
+      {
+        "type": "color",
+        "id": "accent",
+        "label": "Accent color",
+        "default": "#709bb7"
+      },
+      {
+        "type": "color",
+        "id": "background",
+        "label": "Background",
+        "default": "#fcf8f3"
+      }
+    ]
+  }
+]
