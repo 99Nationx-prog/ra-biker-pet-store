@@ -1,12 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
       "type": "hero",
       "settings": {
+        "hero_image": "shopify://shop_images/Golden_Retriever_and_Tabby_Cat_Cuddling.png",
         "heading": "Better days for dogs & cats.",
         "subheading": "Thoughtfully chosen essentials for the companions we love.",
         "dog_label": "Shop Dogs",
-        "cat_label": "Shop Cats"
+        "dog_link": "",
+        "cat_label": "Shop Cats",
+        "cat_link": ""
       }
     },
     "categories": {
@@ -16,7 +28,8 @@
     "featured": {
       "type": "featured-collection",
       "settings": {
-        "heading": "Everyday favorites"
+        "heading": "Everyday favorites",
+        "collection": ""
       }
     }
   },
