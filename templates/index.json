@@ -1,0 +1,28 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "heading": "Better days for dogs & cats.",
+        "subheading": "Thoughtfully chosen essentials for the companions we love.",
+        "dog_label": "Shop Dogs",
+        "cat_label": "Shop Cats"
+      }
+    },
+    "categories": {
+      "type": "categories",
+      "settings": {}
+    },
+    "featured": {
+      "type": "featured-collection",
+      "settings": {
+        "heading": "Everyday favorites"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "categories",
+    "featured"
+  ]
+}
