@@ -1,0 +1,16 @@
+name: Shopify theme validation
+on:
+  push:
+    branches:
+      - feature/phase-1-storefront
+  pull_request:
+jobs:
+  theme-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout theme
+        uses: actions/checkout@v4
+      - name: Run Shopify Theme Check
+        uses: Shopify/theme-check-action@v2
+        with:
+          token: ${{ github.token }}
