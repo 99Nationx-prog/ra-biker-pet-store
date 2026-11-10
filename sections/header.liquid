@@ -1,5 +1,14 @@
-<div class="announcement">Thoughtfully chosen essentials for dogs & cats</div>
-<header class="site-header page-width"><a class="brand" href="{{ routes.root_url }}" aria-label="Ra Biker Pet Store home">RA BIKER <small>PET STORE</small></a>
-<nav aria-label="Main navigation"><a href="{{ routes.root_url }}">Home</a><a href="/collections/dogs">Shop Dogs</a><a href="/collections/cats">Shop Cats</a><a href="/collections/all">Shop All</a></nav>
-<div class="header-actions"><a href="{{ routes.search_url }}" aria-label="Search">Search</a><a href="{{ routes.cart_url }}" aria-label="Cart">Bag ({{ cart.item_count }})</a></div></header>
+<div class="announcement">Thoughtfully chosen essentials for dogs &amp; cats</div>
+<header class="site-header page-width">
+  <a class="brand" href="{{ routes.root_url }}" aria-label="Ra Biker Pet Store home">RA BIKER <small>PET STORE</small></a>
+  <nav class="desktop-nav" aria-label="Main navigation"><a href="{{ routes.root_url }}">Home</a><a href="/collections/dogs">Shop Dogs</a><a href="/collections/cats">Shop Cats</a><a href="{{ routes.all_products_collection_url }}">Shop All</a></nav>
+  <div class="header-actions">
+    <a href="{{ routes.search_url }}" aria-label="Search"><span class="desktop-action-label">Search</span><span class="mobile-action-icon" aria-hidden="true">⌕</span></a>
+    <a href="{{ routes.cart_url }}" aria-label="Shopping bag, {{ cart.item_count }} items"><span class="desktop-action-label">Bag ({{ cart.item_count }})</span><span class="mobile-action-icon" aria-hidden="true">▢</span><span class="mobile-cart-count">{{ cart.item_count }}</span></a>
+    <button class="mobile-menu-toggle" type="button" data-mobile-menu-toggle aria-expanded="false" aria-controls="MobileMenu" aria-label="Toggle navigation"><span aria-hidden="true">☰</span></button>
+  </div>
+</header>
+<nav id="MobileMenu" class="mobile-menu" aria-label="Mobile menu" hidden>
+  <a href="{{ routes.root_url }}">Home</a><a href="/collections/dogs">Shop Dogs</a><a href="/collections/cats">Shop Cats</a><a href="{{ routes.all_products_collection_url }}">Shop All</a><a href="{{ routes.account_url }}">Account</a>
+</nav>
 {% schema %}{"name":"Header","settings":[]} {% endschema %}
