@@ -1,2 +1,28 @@
-<section class="page-width collection-page"><p class="eyebrow">DISCOVER THE COLLECTION</p><h1>{{ collection.title | escape }}</h1><div class="rte">{{ collection.description }}</div><div class="product-grid">{% paginate collection.products by 24 %}{% for product in collection.products %}<a class="product-card" href="{{ product.url }}"><div class="product-photo">{% if product.featured_image %}{{ product.featured_image | image_url: width: 600 | image_tag: loading: 'lazy' }}{% endif %}</div><h2>{{ product.title | escape }}</h2><p>{{ product.price | money }}</p></a>{% else %}<p>No products in this collection yet.</p>{% endfor %}</div>{{ paginate | default_pagination }}{% endpaginate %}</section>
-{% schema %}{"name":"Collection products","settings":[]} {% endschema %}
+<section class="page-width collection-page">
+  <p class="eyebrow">DISCOVER THE COLLECTION</p>
+  <h1>{{ collection.title | escape }}</h1>
+  <div class="rte">{{ collection.description }}</div>
+
+  {% paginate collection.products by 24 %}
+    <div class="product-grid">
+      {% for product in collection.products %}
+        <a class="product-card" href="{{ product.url }}">
+          <div class="product-photo">
+            {% if product.featured_image %}
+              {{ product.featured_image | image_url: width: 600 | image_tag: loading: 'lazy' }}
+            {% endif %}
+          </div>
+          <h2>{{ product.title | escape }}</h2>
+          <p>{{ product.price | money }}</p>
+        </a>
+      {% else %}
+        <p>No products in this collection yet.</p>
+      {% endfor %}
+    </div>
+    {{ paginate | default_pagination }}
+  {% endpaginate %}
+</section>
+
+{% schema %}
+{"name":"Collection products","settings":[]}
+{% endschema %}
