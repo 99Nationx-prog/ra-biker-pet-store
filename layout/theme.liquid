@@ -5,10 +5,12 @@
 <title>{{ page_title | escape }}{% if current_tags %} — {{ current_tags | join: ', ' }}{% endif %}</title>
 {{ content_for_header }}
 {{ 'base.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'mobile-navigation.js' | asset_url }}" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#MainContent">Skip to content</a>
 {% section 'header' %}
 <main id="MainContent" role="main">{{ content_for_layout }}</main>
 {% section 'footer' %}
+{% render 'mobile-bottom-nav' %}
 </body></html>
