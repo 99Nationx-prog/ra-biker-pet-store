@@ -1,0 +1,6 @@
+<nav class="mobile-bottom-nav" aria-label="Mobile quick navigation">
+  <a href="{{ routes.root_url }}" {% if request.page_type == 'index' %}aria-current="page"{% endif %}><span aria-hidden="true">⌂</span><small>Home</small></a>
+  <a href="/collections/dogs"><span aria-hidden="true">♧</span><small>Dogs</small></a>
+  <a href="/collections/cats"><span aria-hidden="true">♧</span><small>Cats</small></a>
+  <a href="{{ routes.all_products_collection_url }}"><span aria-hidden="true">▣</span><small>Shop</small></a>
+</nav>
