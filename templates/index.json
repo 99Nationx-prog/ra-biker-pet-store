@@ -192,7 +192,11 @@
     },
     "lifestyle": {
       "type": "pet-lifestyle",
-      "settings": {},
+      "settings": {
+        "eyebrow": "FOR EVERY KIND OF COMPANION",
+        "heading": "Little moments. A whole lot of love.",
+        "description": "Life with pets is made of tiny routines and big personalities. Find everyday essentials to make those moments even better."
+      },
       "blocks": {
         "story1": {
           "type": "story",
