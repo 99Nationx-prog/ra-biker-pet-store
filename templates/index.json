@@ -85,6 +85,106 @@
     "promise": {
       "type": "store-promise",
       "settings": {}
+    },
+    "catalog": {
+      "type": "catalog-preview",
+      "settings": {},
+      "blocks": {
+        "a": {
+          "type": "item",
+          "settings": {
+            "title": "Dog food & treats",
+            "tag": "DOGS",
+            "symbol": "🥣",
+            "description": "Meals and tasty rewards."
+          }
+        },
+        "b": {
+          "type": "item",
+          "settings": {
+            "title": "Cat food & treats",
+            "tag": "CATS",
+            "symbol": "🐟",
+            "description": "Mealtime favorites for cats."
+          }
+        },
+        "c": {
+          "type": "item",
+          "settings": {
+            "title": "Toys & play",
+            "tag": "PLAYTIME",
+            "symbol": "🎾",
+            "description": "Fetch, chase and explore."
+          }
+        },
+        "d": {
+          "type": "item",
+          "settings": {
+            "title": "Cozy beds",
+            "tag": "COMFORT",
+            "symbol": "🛏️",
+            "description": "Comfortable corners to unwind."
+          }
+        },
+        "e": {
+          "type": "item",
+          "settings": {
+            "title": "Grooming care",
+            "tag": "CARE",
+            "symbol": "🧴",
+            "description": "Keep them looking their best."
+          }
+        },
+        "f": {
+          "type": "item",
+          "settings": {
+            "title": "Bowls & feeding",
+            "tag": "MEALTIME",
+            "symbol": "💧",
+            "description": "Useful feeding essentials."
+          }
+        }
+      },
+      "block_order": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f"
+      ]
+    },
+    "videos": {
+      "type": "pet-video-showcase",
+      "settings": {},
+      "blocks": {
+        "a": {
+          "type": "clip",
+          "settings": {
+            "title": "Playtime favorites",
+            "caption": "See the fun in action."
+          }
+        },
+        "b": {
+          "type": "clip",
+          "settings": {
+            "title": "Grooming moments",
+            "caption": "Little routines, big smiles."
+          }
+        },
+        "c": {
+          "type": "clip",
+          "settings": {
+            "title": "Mealtime happiness",
+            "caption": "Watch their favorites at work."
+          }
+        }
+      },
+      "block_order": [
+        "a",
+        "b",
+        "c"
+      ]
     }
   },
   "order": [
@@ -92,7 +192,9 @@
     "benefits",
     "categories",
     "departments",
+    "catalog",
     "featured",
+    "videos",
     "lifestyle",
     "spotlight",
     "promise",
