@@ -194,7 +194,7 @@
  .hero--integrated .hero-copy > :not(.hero-buttons){position:relative;z-index:2}
  .hero--integrated .hero-photo{z-index:0}
  .hero--integrated .hero-buttons{
-   position:absolute;z-index:4;left:18px;right:18px;bottom:24px;
+   position:absolute;z-index:4;left:18px;right:18px;bottom:94px;
    margin:0;max-width:none;display:flex;gap:10px;flex-wrap:nowrap;
  }
  .hero--integrated .hero-buttons .button{flex:1 1 0;min-width:0}
