@@ -183,3 +183,16 @@
  .site-header .brand-wordmark{font-size:14px}
  .site-header .header-icon{width:19px;height:19px}
 }
+
+/* Mobile hero: anchor CTAs in the clear lower band, away from pet faces. */
+@media(max-width:600px){
+ .hero--integrated .hero-inner{position:relative}
+ .hero--integrated .hero-copy{position:static}
+ .hero--integrated .hero-buttons{
+   position:absolute;z-index:3;
+   left:18px;right:18px;bottom:30px;
+   margin:0;max-width:none;
+   display:flex;gap:10px;flex-wrap:nowrap;
+ }
+ .hero--integrated .hero-buttons .button{flex:1 1 0;min-width:0}
+}
