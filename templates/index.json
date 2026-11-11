@@ -89,10 +89,10 @@
   },
   "order": [
     "hero",
+    "benefits",
     "categories",
     "departments",
     "featured",
-    "benefits",
     "lifestyle",
     "spotlight",
     "promise",
