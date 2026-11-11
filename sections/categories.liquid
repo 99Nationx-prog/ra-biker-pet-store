@@ -1,10 +1,10 @@
 <section class="categories categories--visual page-width" aria-label="Shop by pet">
-  <a class="category-card category-card--dogs" href="/collections/dogs">
+  <a class="category-card category-card--dogs" href="{% if collections['dogs'] != blank %}{{ collections['dogs'].url }}{% else %}{{ routes.all_products_collection_url }}{% endif %}">
     <div class="category-photo">{% if section.settings.dog_image != blank %}{{ section.settings.dog_image | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'category-image' }}{% endif %}</div>
     <span class="category-icon"><svg viewBox="0 0 48 48" aria-hidden="true" focusable="false"><ellipse cx="11" cy="13" rx="5" ry="7" transform="rotate(-22 11 13)"/><ellipse cx="23" cy="9" rx="5" ry="7"/><ellipse cx="35" cy="13" rx="5" ry="7" transform="rotate(22 35 13)"/><ellipse cx="42" cy="24" rx="4" ry="6" transform="rotate(35 42 24)"/><path d="M9 35c1-7 9-14 15-14s14 7 15 14c1 6-4 9-10 7-4-2-6-2-10 0-6 2-11-1-10-7Z"/></svg></span>
     <div class="category-copy"><h2>For Dogs</h2><p>Walks, playtime and everything in between.</p><span class="category-arrow" aria-hidden="true">→</span></div>
   </a>
-  <a class="category-card category-card--cats" href="/collections/cats">
+  <a class="category-card category-card--cats" href="{% if collections['cats'] != blank %}{{ collections['cats'].url }}{% else %}{{ routes.all_products_collection_url }}{% endif %}">
     <div class="category-photo">{% if section.settings.cat_image != blank %}{{ section.settings.cat_image | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'category-image' }}{% endif %}</div>
     <span class="category-icon"><svg viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M8 20 9 7l11 8h8L39 7l1 13v15c0 7-7 10-16 10S8 42 8 35V20Z"/><circle cx="18" cy="28" r="2.2" fill="white"/><circle cx="30" cy="28" r="2.2" fill="white"/><path d="m21 35 3 2 3-2" stroke="white" stroke-width="2" fill="none"/></svg></span>
     <div class="category-copy"><h2>For Cats</h2><p>Cozy corners, curious minds, happy cats.</p><span class="category-arrow" aria-hidden="true">→</span></div>
