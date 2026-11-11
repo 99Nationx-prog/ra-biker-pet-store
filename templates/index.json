@@ -24,7 +24,11 @@
     },
     "categories": {
       "type": "categories",
-      "settings": {}
+      "settings": {
+        "dog_image": "shopify://shop_images/Happy_Golden_Retriever_Portrait-1.png",
+        "cat_image": "shopify://shop_images/Curious_Tabby_Cat_on_a_Cozy_Rug-2.png",
+        "essentials_image": "shopify://shop_images/Teal_Pet_Essentials_Still_Life.png"
+      }
     },
     "featured": {
       "type": "featured-collection",
