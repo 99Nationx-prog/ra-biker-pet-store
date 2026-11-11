@@ -614,3 +614,10 @@ body{color:var(--ink)}
   .mobile-menu-native .mobile-menu__close{display:none}
   .mobile-menu-native[open]>.mobile-menu .mobile-menu__heading::after{content:"Close ×";font-size:15px;font-weight:600}
 }
+
+
+@media(max-width:900px){
+ .site-header .mobile-menu-native[open]>summary.mobile-menu-toggle{position:fixed!important;top:22px;left:min(calc(86vw - 64px),306px);z-index:1003!important;width:44px;height:44px;background:#f6fafb;border:1px solid #d9e3e7;border-radius:50%}
+ .site-header .mobile-menu-native[open]>summary.mobile-menu-toggle svg{display:none}
+ .site-header .mobile-menu-native[open]>summary.mobile-menu-toggle::after{content:"×";font-size:30px;line-height:1;color:#183747}
+}
