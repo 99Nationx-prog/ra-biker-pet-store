@@ -1,2 +1,91 @@
 <section class="pet-lifestyle page-width" aria-labelledby="PetLifestyleTitle"><div class="pet-lifestyle__heading">{% if section.settings.eyebrow != blank %}<p class="eyebrow">{{ section.settings.eyebrow | escape }}</p>{% endif %}<h2 id="PetLifestyleTitle">{{ section.settings.heading | escape }}</h2><p>{{ section.settings.description | escape }}</p></div><div class="pet-lifestyle__grid">{% for block in section.blocks %}<article class="pet-lifestyle__card" {{ block.shopify_attributes }}>{% if block.settings.image != blank %}<div class="pet-lifestyle__photo">{{ block.settings.image | image_url: width: 800 | image_tag: loading: 'lazy' }}</div>{% elsif block.settings.emoji != blank %}<span class="pet-lifestyle__emoji" aria-hidden="true">{{ block.settings.emoji | escape }}</span>{% endif %}{% if block.settings.eyebrow != blank %}<p class="eyebrow">{{ block.settings.eyebrow | escape }}</p>{% endif %}<h3>{{ block.settings.title | escape }}</h3><p>{{ block.settings.description | escape }}</p>{% if block.settings.button_label != blank %}<a href="{{ block.settings.link | default: routes.all_products_collection_url }}">{{ block.settings.button_label | escape }} →</a>{% endif %}</article>{% endfor %}</div></section>
-{% schema %}{"name":"Pet lifestyle stories","settings":[{"type":"text","id":"eyebrow","label":"Small heading","default":"FOR EVERY KIND OF COMPANION"},{"type":"text","id":"heading","label":"Main heading","default":"Little moments. A whole lot of love."},{"type":"textarea","id":"description","label":"Introduction","default":"Life with pets is made of tiny routines and big personalities. Find everyday essentials to make those moments even better."}],"blocks":[{"type":"story","name":"Lifestyle card","settings":[{"type":"image_picker","id":"image","label":"Photo (optional)"},{"type":"text","id":"emoji","label":"Emoji if no photo","default":"🐾"},{"type":"text","id":"eyebrow","label":"Small heading","default":"FOR HAPPY PETS"},{"type":"text","id":"title","label":"Card heading","default":"Everyday moments matter."},{"type":"textarea","id":"description","label":"Card description","default":"Find something special for your companion."},{"type":"text","id":"button_label","label":"Link text","default":"Explore essentials"},{"type":"url","id":"link","label":"Link destination"}]}],"max_blocks":9,"presets":[{"name":"Pet lifestyle stories","blocks":[{"type":"story"},{"type":"story"},{"type":"story"}]}]}{% endschema %}
+{% schema %}
+{
+  "name": "Pet lifestyle stories",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Small heading",
+      "default": "FOR EVERY KIND OF COMPANION"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Main heading",
+      "default": "Little moments. A whole lot of love."
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Introduction",
+      "default": "Life with pets is made of tiny routines and big personalities. Find everyday essentials to make those moments even better."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "story",
+      "name": "Lifestyle card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Photo (optional)"
+        },
+        {
+          "type": "text",
+          "id": "emoji",
+          "label": "Emoji if no photo",
+          "default": "🐾"
+        },
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Small heading",
+          "default": "FOR HAPPY PETS"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Card heading",
+          "default": "Everyday moments matter."
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Card description",
+          "default": "Find something special for your companion."
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Link text",
+          "default": "Explore essentials"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link destination"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 9,
+  "presets": [
+    {
+      "name": "Pet lifestyle stories",
+      "blocks": [
+        {
+          "type": "story"
+        },
+        {
+          "type": "story"
+        },
+        {
+          "type": "story"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
