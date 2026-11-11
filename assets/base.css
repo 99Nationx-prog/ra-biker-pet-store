@@ -145,3 +145,36 @@
   .hero--integrated .hero-copy h1{font-size:34px;max-width:285px}
   .hero--integrated .hero-description{max-width:260px}
 }
+
+
+/* Reference-aligned RA BIKER branding and compact responsive storefront. */
+.site-header .brand{display:inline-flex;align-items:center;gap:11px;line-height:1;letter-spacing:normal;flex-shrink:0}
+.site-header .brand-paw{display:block;width:43px;height:43px;fill:#0873a5;flex-shrink:0}
+.site-header .brand-wordmark{display:block;font-size:25px;letter-spacing:.115em;font-weight:800;white-space:nowrap}
+.site-header .brand-wordmark small{display:block;font-size:10px;letter-spacing:.3em;text-align:center;margin-top:6px}
+@media(min-width:901px){
+ .site-header{min-height:88px;gap:16px}
+ .site-header .desktop-nav{gap:clamp(15px,2vw,30px)}
+ .site-header .header-actions{gap:16px}
+ .site-header .brand-wordmark{font-size:23px}
+ .categories{padding-top:22px;padding-bottom:24px}
+}
+@media(max-width:900px){
+ .site-header{min-height:74px;padding-top:11px;padding-bottom:11px;gap:8px}
+ .site-header .brand{gap:7px}
+ .site-header .brand-paw{width:32px;height:32px}
+ .site-header .brand-wordmark{font-size:clamp(15px,4vw,21px);letter-spacing:.09em}
+ .site-header .brand-wordmark small{font-size:8px;margin-top:4px}
+ .site-header .header-actions{gap:10px}
+ .site-header .mobile-action-icon{font-size:23px}
+}
+@media(max-width:600px){
+ .site-header{min-height:68px}
+ .site-header .brand-paw{width:30px;height:30px}
+ .site-header .brand-wordmark{font-size:clamp(14px,3.8vw,18px)}
+ .site-header .header-actions{gap:8px}
+ .site-header .mobile-menu-toggle{padding:5px}
+ .categories{padding-top:14px;gap:12px}
+ .category-card{min-height:150px}
+ .category-photo{min-height:150px}
+}
