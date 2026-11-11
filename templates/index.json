@@ -76,11 +76,118 @@
     },
     "departments": {
       "type": "shop-departments",
-      "settings": {}
+      "settings": {},
+      "blocks": {
+        "department1": {
+          "type": "department",
+          "settings": {
+            "title": "Dog Food & Treats",
+            "description": "Everyday meals and rewarding little bites.",
+            "emoji": "🥣",
+            "button_label": "Shop now",
+            "collection": "dog-food"
+          }
+        },
+        "department2": {
+          "type": "department",
+          "settings": {
+            "title": "Cat Food & Treats",
+            "description": "Good food for the fussiest little food critics.",
+            "emoji": "🐟",
+            "button_label": "Shop now",
+            "collection": "cat-food"
+          }
+        },
+        "department3": {
+          "type": "department",
+          "settings": {
+            "title": "Toys & Playtime",
+            "description": "Fetch it. Chase it. Love it. Repeat.",
+            "emoji": "🎾",
+            "button_label": "Shop now",
+            "collection": "pet-toys"
+          }
+        },
+        "department4": {
+          "type": "department",
+          "settings": {
+            "title": "Beds & Comfort",
+            "description": "Their new favorite place to snooze.",
+            "emoji": "🛏️",
+            "button_label": "Shop now",
+            "collection": "pet-beds"
+          }
+        },
+        "department5": {
+          "type": "department",
+          "settings": {
+            "title": "Bowls & Feeding",
+            "description": "Make every mealtime feel special.",
+            "emoji": "💧",
+            "button_label": "Shop now",
+            "collection": "feeding-accessories"
+          }
+        },
+        "department6": {
+          "type": "department",
+          "settings": {
+            "title": "Grooming & Care",
+            "description": "A little extra care for their best days.",
+            "emoji": "🧼",
+            "button_label": "Shop now",
+            "collection": "pet-grooming"
+          }
+        }
+      },
+      "block_order": [
+        "department1",
+        "department2",
+        "department3",
+        "department4",
+        "department5",
+        "department6"
+      ]
     },
     "lifestyle": {
       "type": "pet-lifestyle",
-      "settings": {}
+      "settings": {},
+      "blocks": {
+        "story1": {
+          "type": "story",
+          "settings": {
+            "emoji": "🐕",
+            "eyebrow": "FOR THE ADVENTURERS",
+            "title": "Ready for walkies?",
+            "description": "Make every outing a little easier with collars, leads, walking accessories and playful rewards.",
+            "button_label": "Explore dog essentials"
+          }
+        },
+        "story2": {
+          "type": "story",
+          "settings": {
+            "emoji": "🐈",
+            "eyebrow": "FOR THE CURIOUS ONES",
+            "title": "For the kings and queens of cozy.",
+            "description": "From cat toys to comfy beds and feeding accessories, give your little explorer more to love.",
+            "button_label": "Explore cat essentials"
+          }
+        },
+        "story3": {
+          "type": "story",
+          "settings": {
+            "emoji": "💙",
+            "eyebrow": "FOR EVERYDAY HAPPINESS",
+            "title": "Good food. Great play. Happy naps.",
+            "description": "Shop feeding, grooming, comfort and playtime favorites in one convenient place.",
+            "button_label": "Discover more"
+          }
+        }
+      },
+      "block_order": [
+        "story1",
+        "story2",
+        "story3"
+      ]
     },
     "promise": {
       "type": "store-promise",
