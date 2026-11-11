@@ -1,4 +1,4 @@
-<div class="announcement">Thoughtfully chosen essentials for dogs &amp; cats</div>
+<div class="announcement" role="region" aria-label="Store announcement">{% if section.settings.announcement_link != blank %}<a href="{{ section.settings.announcement_link }}">{% endif %}{{ section.settings.announcement_text | escape }}{% if section.settings.announcement_link != blank %}</a>{% endif %}</div>
 <header class="site-header page-width">
   <a class="brand" href="{{ routes.root_url }}" aria-label="Ra Biker Pet Store home"><svg class="brand-paw" width="34" height="34" style="width:34px;height:34px;max-width:34px;max-height:34px;flex:0 0 34px;fill:#086fa5" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><ellipse cx="13" cy="19" rx="7" ry="10" transform="rotate(-24 13 19)"/><ellipse cx="29" cy="12" rx="7" ry="10" transform="rotate(-7 29 12)"/><ellipse cx="45" cy="17" rx="7" ry="10" transform="rotate(19 45 17)"/><ellipse cx="55" cy="32" rx="6" ry="9" transform="rotate(33 55 32)"/><path d="M31 29c-7 0-11 6-15 12-3 5-5 8-3 13 3 6 10 5 18 2 6-2 10-1 16 0 8 1 12-5 8-12-3-5-8-8-12-12-4-3-7-3-12-3z"/></svg><span class="brand-wordmark">RA BIKER<small>PET STORE</small></span></a>
   <nav class="desktop-nav" aria-label="Main navigation"><a href="{{ routes.root_url }}">Home</a><a href="/collections/dogs">Shop Dogs</a><a href="/collections/cats">Shop Cats</a><a href="{{ routes.all_products_collection_url }}">Shop All</a></nav>
@@ -11,4 +11,4 @@
 <nav id="MobileMenu" class="mobile-menu" aria-label="Mobile menu" hidden>
   <a href="{{ routes.root_url }}">Home</a><a href="/collections/dogs">Shop Dogs</a><a href="/collections/cats">Shop Cats</a><a href="{{ routes.all_products_collection_url }}">Shop All</a><a href="{{ routes.account_url }}">Account</a>
 </nav>
-{% schema %}{"name":"Header","settings":[]} {% endschema %}
+{% schema %}{"name":"Header","settings":[{"type":"text","id":"announcement_text","label":"Announcement text","default":"Thoughtfully chosen essentials for dogs & cats"},{"type":"url","id":"announcement_link","label":"Announcement link (optional)"}]} {% endschema %}
