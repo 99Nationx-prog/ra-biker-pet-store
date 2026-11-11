@@ -220,3 +220,50 @@
 .categories--visual .category-copy p{margin:0 0 14px;font-size:clamp(12px,1.1vw,15px);line-height:1.45}
 .categories--visual .category-arrow{font-size:30px;line-height:1}
 @media(max-width:900px){.categories--visual{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.categories--visual .category-card{aspect-ratio:.62;border-radius:14px}.categories--visual .category-icon{top:10px;left:10px;width:34px;height:34px}.categories--visual .category-icon svg{width:20px;height:20px}.categories--visual .category-copy{padding:12px!important}.categories--visual .category-copy h2{font-size:clamp(13px,3.5vw,19px)}.categories--visual .category-copy p{font-size:clamp(10px,2.6vw,13px);margin-bottom:10px}.categories--visual .category-arrow{font-size:23px}}
+
+
+/* Seamless hero-to-category transition and responsive lift interaction. */
+.hero--integrated + .categories--visual,
+.shopify-section:has(> .hero--integrated) + .shopify-section > .categories--visual {
+  padding-top:0;
+  margin-top:0;
+}
+.categories--visual{
+  column-gap:8px;
+  row-gap:8px;
+  overflow:visible;
+}
+.categories--visual .category-card{
+  transform:translateY(0);
+  transition:transform 240ms ease,box-shadow 240ms ease;
+  will-change:transform;
+}
+@media(hover:hover) and (pointer:fine){
+  .categories--visual .category-card:hover{
+    transform:translateY(-7px);
+    box-shadow:0 12px 24px rgba(11,41,75,.17);
+  }
+}
+.categories--visual .category-card:active{
+  transform:translateY(-5px);
+  box-shadow:0 9px 18px rgba(11,41,75,.15);
+}
+.categories--visual .category-card:focus-visible{
+  outline:3px solid #087da3;
+  outline-offset:3px;
+  transform:translateY(-5px);
+}
+@media(max-width:900px){
+  .hero--integrated + .categories--visual,
+  .shopify-section:has(> .hero--integrated) + .shopify-section > .categories--visual{
+    padding-top:0;
+    margin-top:0;
+  }
+  .categories--visual{gap:6px}
+}
+@media(prefers-reduced-motion:reduce){
+  .categories--visual .category-card{transition:none;will-change:auto}
+  .categories--visual .category-card:hover,
+  .categories--visual .category-card:active,
+  .categories--visual .category-card:focus-visible{transform:none}
+}
