@@ -337,3 +337,40 @@
 .copyright{flex-direction:column;gap:6px}
 }
 @media(prefers-reduced-motion:reduce){.product-card{transition:none}}
+
+/* Rich pet store merchandising */
+.shop-departments{padding-top:52px;padding-bottom:54px}
+.shop-departments .section-heading{align-items:end}
+.shop-departments .section-heading h2{max-width:700px}
+.shop-departments__lead{color:#58646d;line-height:1.55;max-width:650px}
+.shop-departments__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:28px}
+.shop-department{display:block;overflow:hidden;border-radius:18px;background:#f6f8f8;border:1px solid #e8eeee;transition:transform .2s ease,box-shadow .2s ease}
+.shop-department:hover,.shop-department:focus-visible{transform:translateY(-5px);box-shadow:0 12px 30px #0a395018}
+.shop-department__photo{height:170px;background:linear-gradient(135deg,#e3f3f6,#f7eae0);display:grid;place-items:center;overflow:hidden}
+.shop-department__photo img{width:100%;height:100%;object-fit:cover}
+.shop-department__photo>span{font-size:66px}
+.shop-department__copy{padding:21px 22px 23px}
+.shop-department__copy h3{font-size:21px;line-height:1.2;margin:0 0 10px}
+.shop-department__copy p{font-size:14px;line-height:1.55;color:#53616c;min-height:44px;margin:0 0 17px}
+.shop-department__copy>span{font-weight:700;color:#087da3;font-size:13px}
+.pet-lifestyle{padding-top:50px;padding-bottom:55px}
+.pet-lifestyle__heading{text-align:center;max-width:690px;margin:0 auto 30px}
+.pet-lifestyle__heading h2{font-size:clamp(30px,4vw,49px);line-height:1.12;letter-spacing:-.035em;margin:12px 0}
+.pet-lifestyle__heading>p:last-child{color:#53616c;line-height:1.6}
+.pet-lifestyle__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.pet-lifestyle__card{background:#f5f8f8;border:1px solid #e7eeee;border-radius:20px;padding:28px}
+.pet-lifestyle__card:nth-child(2){background:#faf3ed}
+.pet-lifestyle__card:nth-child(3){background:#eaf5f7}
+.pet-lifestyle__emoji{font-size:42px;display:block;margin-bottom:20px}
+.pet-lifestyle__card h3{font-size:clamp(21px,2.4vw,29px);line-height:1.2;letter-spacing:-.025em;margin:10px 0}
+.pet-lifestyle__card>p:not(.eyebrow){color:#53616c;line-height:1.6;font-size:14px}
+.pet-lifestyle__card a{display:inline-block;margin-top:18px;color:#087da3;font-weight:700}
+.store-promise{background:#073c62;color:#fff;text-align:center;padding:70px 0}
+.store-promise__inner{max-width:850px}
+.store-promise .eyebrow{color:#a6dce9}
+.store-promise h2{font-size:clamp(32px,4vw,52px);line-height:1.13;letter-spacing:-.035em;margin:16px 0}
+.store-promise__inner>p:not(.eyebrow){line-height:1.75;max-width:680px;margin:0 auto 25px;color:#e4f0f5}
+.store-promise a{display:inline-flex;padding:14px 26px;background:white;color:#073c62;border-radius:40px;font-weight:700}
+@media(max-width:850px){.shop-departments__grid{grid-template-columns:repeat(2,minmax(0,1fr))}.pet-lifestyle__grid{grid-template-columns:1fr;gap:12px}.pet-lifestyle__card{padding:24px}.pet-lifestyle__emoji{margin-bottom:10px}}
+@media(max-width:600px){.shop-departments{padding-top:30px;padding-bottom:25px}.shop-departments__grid{gap:10px;margin-top:18px}.shop-department__photo{height:105px}.shop-department__photo>span{font-size:45px}.shop-department__copy{padding:13px}.shop-department__copy h3{font-size:16px}.shop-department__copy p{font-size:12px;min-height:0}.shop-department__copy>span{font-size:11px}.pet-lifestyle{padding-top:25px;padding-bottom:30px}.pet-lifestyle__heading{margin-bottom:20px}.store-promise{padding:45px 0}}
+@media(prefers-reduced-motion:reduce){.shop-department{transition:none}}
