@@ -5,7 +5,7 @@
   <div class="header-actions">
     <a href="{{ routes.search_url }}" aria-label="Search"><span class="desktop-action-label">Search</span><svg class="header-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg></a>
     <a href="{{ routes.cart_url }}" aria-label="Shopping bag, {{ cart.item_count }} items"><span class="desktop-action-label">Bag ({{ cart.item_count }})</span><svg class="header-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 8h16l-1 13H5L4 8Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg><span class="mobile-cart-count">{{ cart.item_count }}</span></a>
-    <button type="button" class="mobile-menu-toggle" aria-label="Open shopping menu" aria-controls="MobileMenu" aria-expanded="false" data-mobile-menu-toggle><svg class="header-icon" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    <a class="mobile-menu-toggle" href="#MobileMenu" aria-label="Open shopping menu" aria-controls="MobileMenu" aria-expanded="false" data-mobile-menu-toggle><svg class="header-icon" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></a>
   </div>
 </header>
 <nav id="MobileMenu" class="mobile-menu" aria-label="Mobile menu" hidden>
