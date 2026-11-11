@@ -1,2 +1,48 @@
-<section class="categories-section page-width" aria-label="{{ section.settings.heading | default: 'Shop by pet' | escape }}">{% if section.settings.heading != blank %}<div class="categories-section__heading"><h2>{{ section.settings.heading | escape }}</h2>{% if section.settings.description != blank %}<p>{{ section.settings.description | escape }}</p>{% endif %}</div>{% endif %}<div class="categories categories--visual categories--editable{% if section.settings.mobile_scroll %} categories--scroll{% endif %}">{% for block in section.blocks %}{% assign selected_collection = block.settings.collection %}<a class="category-card" href="{{ block.settings.link | default: selected_collection.url | default: routes.all_products_collection_url }}" {{ block.shopify_attributes }}><div class="category-photo">{% if block.settings.image != blank %}{{ block.settings.image | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'category-image' }}{% elsif selected_collection.featured_image != blank %}{{ selected_collection.featured_image | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'category-image' }}{% endif %}</div><div class="category-copy"><h2>{{ block.settings.title | escape }}</h2><p>{{ block.settings.description | escape }}</p>{% if block.settings.button_label != blank %}<span class="category-arrow">{{ block.settings.button_label | escape }} →</span>{% endif %}</div></a>{% endfor %}</div></section>
-{% schema %}{"name":"Shop by pet","settings":[{"type":"text","id":"heading","label":"Section heading","default":"Shop by pet"},{"type":"textarea","id":"description","label":"Section description"},{"type":"checkbox","id":"mobile_scroll","label":"Swipe cards sideways on mobile","default":true}],"blocks":[{"type":"category","name":"Shopping category","settings":[{"type":"text","id":"title","label":"Card title","default":"Shop pets"},{"type":"textarea","id":"description","label":"Card description","default":"Discover something wonderful."},{"type":"image_picker","id":"image","label":"Card photo"},{"type":"collection","id":"collection","label":"Linked collection"},{"type":"url","id":"link","label":"Custom link (optional)"},{"type":"text","id":"button_label","label":"Button text","default":"Shop now"}]}],"max_blocks":12,"presets":[{"name":"Shop by pet","blocks":[{"type":"category"},{"type":"category"},{"type":"category"}]}]}{% endschema %}
+<section class="categories categories--visual page-width" aria-label="{{ section.settings.section_label | escape }}">
+  <a class="category-card category-card--dogs" href="{{ section.settings.dog_link | default: routes.all_products_collection_url }}">
+    <div class="category-photo">{% if section.settings.dog_image != blank %}{{ section.settings.dog_image | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'category-image' }}{% endif %}</div>
+    <span class="category-icon"><svg viewBox="0 0 48 48" aria-hidden="true" focusable="false"><ellipse cx="11" cy="13" rx="5" ry="7" transform="rotate(-22 11 13)"/><ellipse cx="23" cy="9" rx="5" ry="7"/><ellipse cx="35" cy="13" rx="5" ry="7" transform="rotate(22 35 13)"/><ellipse cx="42" cy="24" rx="4" ry="6" transform="rotate(35 42 24)"/><path d="M9 35c1-7 9-14 15-14s14 7 15 14c1 6-4 9-10 7-4-2-6-2-10 0-6 2-11-1-10-7Z"/></svg></span>
+    <div class="category-copy"><h2>{{ section.settings.dog_title | escape }}</h2><p>{{ section.settings.dog_description | escape }}</p><span class="category-arrow" aria-hidden="true">→</span></div>
+  </a>
+  <a class="category-card category-card--cats" href="{{ section.settings.cat_link | default: routes.all_products_collection_url }}">
+    <div class="category-photo">{% if section.settings.cat_image != blank %}{{ section.settings.cat_image | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'category-image' }}{% endif %}</div>
+    <span class="category-icon"><svg viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M8 20 9 7l11 8h8L39 7l1 13v15c0 7-7 10-16 10S8 42 8 35V20Z"/><circle cx="18" cy="28" r="2.2" fill="white"/><circle cx="30" cy="28" r="2.2" fill="white"/><path d="m21 35 3 2 3-2" stroke="white" stroke-width="2" fill="none"/></svg></span>
+    <div class="category-copy"><h2>{{ section.settings.cat_title | escape }}</h2><p>{{ section.settings.cat_description | escape }}</p><span class="category-arrow" aria-hidden="true">→</span></div>
+  </a>
+  <a class="category-card category-card--essentials" href="{{ section.settings.essentials_link | default: routes.all_products_collection_url }}">
+    <div class="category-photo">{% if section.settings.essentials_image != blank %}{{ section.settings.essentials_image | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'category-image' }}{% endif %}</div>
+    <span class="category-icon"><svg viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M10 18h28l-2 25H12L10 18Z"/><path d="M18 19v-5a6 6 0 0 1 12 0v5" stroke="currentColor" stroke-width="4" fill="none"/></svg></span>
+    <div class="category-copy"><h2>{{ section.settings.essentials_title | escape }}</h2><p>{{ section.settings.essentials_description | escape }}</p><span class="category-arrow" aria-hidden="true">→</span></div>
+  </a>
+  {% for block in section.blocks %}
+    <a class="category-card category-card--extra" href="{{ block.settings.link | default: routes.all_products_collection_url }}" {{ block.shopify_attributes }}>
+      <div class="category-photo">{% if block.settings.image != blank %}{{ block.settings.image | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'category-image' }}{% endif %}</div>
+      <div class="category-copy"><h2>{{ block.settings.title | escape }}</h2><p>{{ block.settings.description | escape }}</p><span class="category-arrow" aria-hidden="true">→</span></div>
+    </a>
+  {% endfor %}
+</section>
+{% schema %}
+{"name":"Shop by pet","settings":[
+{"type":"text","id":"section_label","label":"Section accessibility label","default":"Shop by pet"},
+{"type":"header","content":"Dogs card"},
+{"type":"image_picker","id":"dog_image","label":"Dog category image"},
+{"type":"text","id":"dog_title","label":"Dog heading","default":"For Dogs"},
+{"type":"textarea","id":"dog_description","label":"Dog caption","default":"Walks, playtime and everything in between."},
+{"type":"url","id":"dog_link","label":"Dog card link"},
+{"type":"header","content":"Cats card"},
+{"type":"image_picker","id":"cat_image","label":"Cat category image"},
+{"type":"text","id":"cat_title","label":"Cat heading","default":"For Cats"},
+{"type":"textarea","id":"cat_description","label":"Cat caption","default":"Cozy corners, curious minds, happy cats."},
+{"type":"url","id":"cat_link","label":"Cat card link"},
+{"type":"header","content":"Everyday Essentials card"},
+{"type":"image_picker","id":"essentials_image","label":"Essentials category image"},
+{"type":"text","id":"essentials_title","label":"Essentials heading","default":"Everyday Essentials"},
+{"type":"textarea","id":"essentials_description","label":"Essentials caption","default":"Simple things for happier pets."},
+{"type":"url","id":"essentials_link","label":"Essentials card link"}
+],"blocks":[{"type":"extra_category","name":"Extra category card","settings":[
+{"type":"image_picker","id":"image","label":"Card photo"},
+{"type":"text","id":"title","label":"Card heading","default":"More pet favorites"},
+{"type":"textarea","id":"description","label":"Card caption","default":"Discover more for your pet."},
+{"type":"url","id":"link","label":"Card link"}
+]}],"max_blocks":12,"presets":[{"name":"Shop by pet"}]}
+{% endschema %}
