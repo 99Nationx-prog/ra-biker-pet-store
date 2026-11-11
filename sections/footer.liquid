@@ -1,2 +1,90 @@
-<footer class="footer"><div class="page-width footer-grid"><div><strong>RA BIKER PET STORE</strong><p>Thoughtfully chosen essentials for the companions we love.</p><p>Made for better days with dogs and cats.</p></div><div><strong>Shop</strong><p><a href="{% if collections['dogs'] != blank %}{{ collections['dogs'].url }}{% else %}{{ routes.all_products_collection_url }}{% endif %}">For Dogs</a></p><p><a href="{% if collections['cats'] != blank %}{{ collections['cats'].url }}{% else %}{{ routes.all_products_collection_url }}{% endif %}">For Cats</a></p><p><a href="{{ routes.all_products_collection_url }}">Shop All</a></p><p><a href="{{ routes.search_url }}">Search</a></p></div><div><strong>Customer care</strong><p><a href="/pages/contact">Contact us</a></p><p><a href="/policies/shipping-policy">Shipping policy</a></p><p><a href="/policies/refund-policy">Returns & refunds</a></p><p><a href="/policies/privacy-policy">Privacy policy</a></p><p><a href="/policies/terms-of-service">Terms of service</a></p></div></div><div class="page-width copyright"><span>© {{ 'now' | date: '%Y' }} RA BIKER PET STORE</span><span>Carefully chosen for curious cats and happy dogs.</span></div></footer>
-{% schema %}{"name":"Footer","settings":[]} {% endschema %}
+<footer class="footer" aria-label="Store footer">
+<div class="page-width footer-grid footer-grid--custom">
+  <div class="footer-about">
+    {% if section.settings.logo != blank %}<div class="footer-about__logo">{{ section.settings.logo | image_url: width: 440 | image_tag: loading: 'lazy', alt: section.settings.brand_name }}</div>{% endif %}
+    <strong>{{ section.settings.brand_name | escape }}</strong>
+    {% if section.settings.description != blank %}<p>{{ section.settings.description | escape }}</p>{% endif %}
+    {% if section.settings.tagline != blank %}<p>{{ section.settings.tagline | escape }}</p>{% endif %}
+  </div>
+  <div class="footer-links">
+    <details class="footer-accordion" {% if section.settings.open_first %}open{% endif %}>
+      <summary>{{ section.settings.shop_heading | escape }}<span class="footer-chevron" aria-hidden="true"></span></summary>
+      <div class="footer-accordion__content">
+        {% if section.settings.shop_menu != blank %}
+          {% for link in section.settings.shop_menu.links %}<a href="{{ link.url }}">{{ link.title | escape }}</a>{% endfor %}
+        {% else %}
+          <a href="{% if collections['dogs'] != blank %}{{ collections['dogs'].url }}{% else %}{{ routes.all_products_collection_url }}{% endif %}">For Dogs</a>
+          <a href="{% if collections['cats'] != blank %}{{ collections['cats'].url }}{% else %}{{ routes.all_products_collection_url }}{% endif %}">For Cats</a>
+          <a href="{{ routes.all_products_collection_url }}">Shop All</a>
+          <a href="{{ routes.search_url }}">Search</a>
+        {% endif %}
+      </div>
+    </details>
+    <details class="footer-accordion">
+      <summary>{{ section.settings.care_heading | escape }}<span class="footer-chevron" aria-hidden="true"></span></summary>
+      <div class="footer-accordion__content">
+        {% if section.settings.care_menu != blank %}
+          {% for link in section.settings.care_menu.links %}<a href="{{ link.url }}">{{ link.title | escape }}</a>{% endfor %}
+        {% else %}
+          <a href="/pages/contact">Contact us</a>
+          <a href="{{ shop.shipping_policy.url | default: '/policies/shipping-policy' }}">Shipping policy</a>
+          <a href="{{ shop.refund_policy.url | default: '/policies/refund-policy' }}">Returns &amp; refunds</a>
+          <a href="{{ shop.privacy_policy.url | default: '/policies/privacy-policy' }}">Privacy policy</a>
+          <a href="{{ shop.terms_of_service.url | default: '/policies/terms-of-service' }}">Terms of service</a>
+        {% endif %}
+      </div>
+    </details>
+    {% for block in section.blocks %}
+      <details class="footer-accordion" {{ block.shopify_attributes }}>
+        <summary>{{ block.settings.heading | escape }}<span class="footer-chevron" aria-hidden="true"></span></summary>
+        <div class="footer-accordion__content">{% for link in block.settings.menu.links %}<a href="{{ link.url }}">{{ link.title | escape }}</a>{% endfor %}{% if block.settings.text != blank %}<div class="rte">{{ block.settings.text }}</div>{% endif %}</div>
+      </details>
+    {% endfor %}
+  </div>
+  <div class="footer-connect">
+    {% if section.settings.social_heading != blank %}<strong>{{ section.settings.social_heading | escape }}</strong>{% endif %}
+    <div class="footer-socials">
+      {% if section.settings.facebook != blank %}<a href="{{ section.settings.facebook }}" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 21v-8h3l.5-4H14V7c0-1 .3-2 2-2h2V1.4A25 25 0 0 0 15.1 1C12 1 10 2.8 10 6v3H7v4h3v8z"/></svg></a>{% endif %}
+      {% if section.settings.instagram != blank %}<a href="{{ section.settings.instagram }}" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.6" cy="6.5" r="1.2"/></svg></a>{% endif %}
+      {% if section.settings.tiktok != blank %}<a href="{{ section.settings.tiktok }}" aria-label="TikTok" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 2h3c.2 2.5 1.6 4.1 4 4.4v3.2c-2.4 0-4.7-1-6.3-2.5v7.1c0 4.3-2.9 7.5-7.1 7.5A7 7 0 0 1 2 14.6a7.2 7.2 0 0 1 8.4-7v3.6c-2.9-.8-4.8.8-4.8 3.4a3.3 3.3 0 0 0 6.6.1V2z"/></svg></a>{% endif %}
+      {% if section.settings.youtube != blank %}<a href="{{ section.settings.youtube }}" aria-label="YouTube" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="m10 9 6 3-6 3z"/></svg></a>{% endif %}
+      {% if section.settings.pinterest != blank %}<a href="{{ section.settings.pinterest }}" aria-label="Pinterest" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.5 19.4c0-1 .1-2.1.4-3.2l1.4-5.7s-.3-.6-.3-1.5c0-1.5.9-2.6 2-2.6.9 0 1.3.7 1.3 1.5 0 .9-.6 2.3-.9 3.6-.3 1.1.5 2 1.6 2 1.9 0 3.2-2 3.2-4.9 0-2.6-1.9-4.4-4.5-4.4-3.1 0-4.9 2.3-4.9 4.7 0 .9.4 1.9.9 2.4l-.3 1.1c-1.4-.6-2.3-2.3-2.3-4.3 0-3.5 2.6-6.7 7.2-6.7 3.8 0 6.8 2.7 6.8 6.3 0 3.8-2.4 6.8-5.7 6.8-1.1 0-2.1-.6-2.5-1.2l-.7 2.7c-.3 1.2-1 2.5-1.5 3.4A10 10 0 1 0 12 2z"/></svg></a>{% endif %}
+    </div>
+  </div>
+</div>
+<div class="page-width footer-bottom">
+  <div class="footer-copyright">© {{ 'now' | date: '%Y' }} {{ section.settings.copyright_name | escape }}{% if section.settings.bottom_text != blank %}<span>{{ section.settings.bottom_text | escape }}</span>{% endif %}</div>
+  {% if section.settings.show_payment_icons %}<div class="footer-payment" aria-label="Accepted payment methods">{% for type in shop.enabled_payment_types %}<span class="footer-payment__icon">{{ type | payment_type_svg_tag }}</span>{% endfor %}</div>{% endif %}
+</div>
+</footer>
+{% schema %}
+{
+"name":"Footer",
+"settings":[
+{"type":"header","content":"Brand"},
+{"type":"image_picker","id":"logo","label":"Footer logo (optional)"},
+{"type":"text","id":"brand_name","label":"Store name","default":"RA BIKER PET STORE"},
+{"type":"textarea","id":"description","label":"Store description","default":"Thoughtfully chosen essentials for the companions we love."},
+{"type":"textarea","id":"tagline","label":"Second description","default":"Made for better days with dogs and cats."},
+{"type":"header","content":"Dropdown navigation"},
+{"type":"text","id":"shop_heading","label":"Shop dropdown heading","default":"Shop"},
+{"type":"link_list","id":"shop_menu","label":"Shop links menu"},
+{"type":"text","id":"care_heading","label":"Customer care dropdown heading","default":"Customer care"},
+{"type":"link_list","id":"care_menu","label":"Customer care links menu"},
+{"type":"checkbox","id":"open_first","label":"Open Shop dropdown initially","default":false},
+{"type":"header","content":"Social media"},
+{"type":"text","id":"social_heading","label":"Social heading","default":"Follow us"},
+{"type":"url","id":"facebook","label":"Facebook URL"},
+{"type":"url","id":"instagram","label":"Instagram URL"},
+{"type":"url","id":"tiktok","label":"TikTok URL"},
+{"type":"url","id":"youtube","label":"YouTube URL"},
+{"type":"url","id":"pinterest","label":"Pinterest URL"},
+{"type":"header","content":"Payments and copyright"},
+{"type":"checkbox","id":"show_payment_icons","label":"Show enabled payment logos","default":true},
+{"type":"text","id":"copyright_name","label":"Copyright name","default":"RA BIKER PET STORE"},
+{"type":"text","id":"bottom_text","label":"Bottom tagline","default":"Carefully chosen for curious cats and happy dogs."}
+],
+"blocks":[{"type":"footer_group","name":"Extra dropdown group","settings":[{"type":"text","id":"heading","label":"Dropdown heading","default":"Helpful links"},{"type":"link_list","id":"menu","label":"Links menu"},{"type":"richtext","id":"text","label":"Optional content"}]}],
+"max_blocks":6
+}
+{% endschema %}
