@@ -436,3 +436,31 @@
  .store-benefit p{font-size:10px}
 }
 @media(prefers-reduced-motion:reduce){.store-benefit{transition:none}}
+
+/* RA BIKER premium merchandising system */
+:root{--blue:#087fa5;--ink:#132b3c;--cream:#fff9f2;--line:#e5eaf0}
+body{color:var(--ink)}
+.announcement{background:linear-gradient(95deg,#07547d,#0796b4);color:white;font-weight:650}
+.brand-wordmark{letter-spacing:.12em}
+.desktop-nav a{font-weight:700;transition:color .2s ease}
+.desktop-nav a:hover,.desktop-nav a:focus-visible{color:#087fa5}
+.section-heading h2{font-weight:800;letter-spacing:-.035em}
+.shop-departments{padding-top:clamp(35px,5vw,80px);padding-bottom:clamp(40px,6vw,90px)}
+.shop-departments__lead{max-width:610px;line-height:1.65;color:#536576}
+.shop-departments__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.shop-department{display:block;overflow:hidden;position:relative;border-radius:24px;background:#e9f6f8;min-width:0;transition:transform .25s ease,box-shadow .25s ease}
+.shop-department:nth-child(2){background:#fff0e5}.shop-department:nth-child(3){background:#edf5dd}.shop-department:nth-child(4){background:#f1eafa}.shop-department:nth-child(5){background:#fff1d8}.shop-department:nth-child(6){background:#e6f3ed}
+.shop-department__photo{height:clamp(165px,19vw,270px);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.shop-department__photo img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease}
+.shop-department__symbol{font-size:clamp(66px,8vw,112px);filter:drop-shadow(0 12px 12px #102a3c18)}
+.shop-department__copy{padding:22px 24px 25px}
+.shop-department__copy h3{font-size:clamp(19px,2vw,26px);line-height:1.15;margin:0 0 9px;font-weight:800;letter-spacing:-.03em}
+.shop-department__copy p{font-size:14px;line-height:1.5;min-height:42px;margin:0 0 18px;color:#435a68}
+.shop-department__copy>span{font-weight:800;font-size:14px;color:#006c91}
+.shop-department:hover,.shop-department:focus-visible{transform:translateY(-5px);box-shadow:0 16px 30px #12334d20}
+.shop-department:hover img{transform:scale(1.05)}
+.product-card{border-radius:18px;overflow:hidden;transition:transform .2s ease,box-shadow .2s ease}
+.product-card:hover,.product-card:focus-visible{transform:translateY(-4px);box-shadow:0 10px 24px #12334d18}
+@media(max-width:900px){.shop-departments__grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.shop-department__copy{padding:15px}.shop-department__photo{height:190px}}
+@media(max-width:500px){.shop-department{border-radius:17px}.shop-department__photo{height:145px}.shop-department__copy{padding:13px}.shop-department__copy h3{font-size:17px}.shop-department__copy p{font-size:12px;min-height:54px}.shop-department__copy>span{font-size:12px}.shop-departments__lead{font-size:14px}}
+@media(prefers-reduced-motion:reduce){.shop-department,.shop-department__photo img,.product-card{transition:none}}
