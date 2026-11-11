@@ -601,3 +601,16 @@ body{color:var(--ink)}
 .mobile-menu__care summary{cursor:pointer;padding:19px 2px;font-size:17px;font-weight:650;color:#173345}
 .mobile-menu__care>a{display:block;padding:13px 12px;font-size:15px;border-top:1px solid #edf2f4}
 @media(max-width:760px){.footer-grid--custom{grid-template-columns:1fr}}
+
+
+/* Reliable native mobile drawer: <details> opens without JavaScript. */
+.mobile-menu-native{display:none}
+@media(max-width:900px){
+  .site-header .mobile-menu-native{display:block;position:static}
+  .site-header .mobile-menu-native>summary.mobile-menu-toggle{display:inline-flex!important;align-items:center;justify-content:center;list-style:none;cursor:pointer;min-width:44px;min-height:44px;padding:3px;border:0;background:transparent;color:#102a3c}
+  .mobile-menu-native>summary::-webkit-details-marker{display:none}
+  .mobile-menu-native[open]>.mobile-menu{display:flex!important;flex-direction:column;position:fixed!important;inset:0 auto 0 0!important;width:min(86vw,370px)!important;height:100dvh!important;z-index:1001!important;padding:0 24px max(24px,env(safe-area-inset-bottom))!important;background:#fff;box-shadow:14px 0 48px rgba(10,35,49,.24);overflow-y:auto}
+  .mobile-menu-native[open]::before{content:"";display:block;position:fixed;inset:0;z-index:1000;background:rgba(12,28,38,.52)}
+  .mobile-menu-native .mobile-menu__close{display:none}
+  .mobile-menu-native[open]>.mobile-menu .mobile-menu__heading::after{content:"Close ×";font-size:15px;font-weight:600}
+}
