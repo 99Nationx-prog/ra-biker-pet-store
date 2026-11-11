@@ -575,3 +575,12 @@ body{color:var(--ink)}
 .footer-payment__icon svg{width:44px;height:28px}
 @media(max-width:760px){.footer-grid--custom{grid-template-columns:1fr;gap:25px}.footer-about p{max-width:unset}.footer-connect{padding-top:4px}.footer-bottom{align-items:flex-start;flex-direction:column;margin-top:30px}.footer-socials a{width:44px;height:44px}}
 @media(prefers-reduced-motion:reduce){.footer-chevron{transition:none}}
+
+
+/* Shop by pet: one uninterrupted swipeable row; preserve photo overlay cards */
+.categories--horizontal{display:grid!important;grid-auto-flow:column!important;grid-auto-columns:clamp(210px,27vw,350px)!important;grid-template-columns:none!important;gap:14px!important;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x proximity;scroll-padding-inline:5%;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;padding-bottom:22px;scrollbar-width:thin}
+.categories--horizontal>.category-card{scroll-snap-align:start;min-width:0;width:100%;height:clamp(275px,35vw,390px);flex:none}
+.categories--horizontal>.category-card .category-icon--custom img{display:block;width:100%;height:100%;object-fit:contain}
+.categories--horizontal>.category-card .category-icon--emoji{display:grid;place-items:center;font-size:26px}
+@media(max-width:900px){.categories--horizontal{grid-auto-columns:clamp(190px,44vw,290px)!important;scroll-padding-inline:18px}}
+@media(max-width:600px){.categories--horizontal{grid-auto-columns:min(72vw,270px)!important;gap:12px!important;padding-right:18px}.categories--horizontal>.category-card{height:330px;min-height:330px}}
