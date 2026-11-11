@@ -187,7 +187,7 @@
 /* Mobile hero: anchor CTAs in the clear lower band, away from pet faces. */
 @media(max-width:600px){
  .hero--integrated .hero-inner{position:relative}
- .hero--integrated .hero-copy{position:static}
+ .hero--integrated .hero-copy{position:relative;z-index:2}
  .hero--integrated .hero-buttons{
    position:absolute;z-index:3;
    left:18px;right:18px;bottom:30px;
