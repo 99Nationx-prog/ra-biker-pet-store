@@ -16,10 +16,45 @@
     "categories": {
       "type": "categories",
       "settings": {
-        "dog_image": "shopify://shop_images/Happy_Golden_Retriever_Portrait-1.png",
-        "cat_image": "shopify://shop_images/Curious_Tabby_Cat_on_a_Cozy_Rug-2.png",
-        "essentials_image": "shopify://shop_images/Teal_Pet_Essentials_Still_Life.png"
-      }
+        "heading": "Shop by pet",
+        "mobile_scroll": true
+      },
+      "blocks": {
+        "category1": {
+          "type": "category",
+          "settings": {
+            "title": "For Dogs",
+            "description": "Walks, playtime and everything in between.",
+            "image": "shopify://shop_images/Happy_Golden_Retriever_Portrait-1.png",
+            "button_label": "Shop now",
+            "collection": "dogs"
+          }
+        },
+        "category2": {
+          "type": "category",
+          "settings": {
+            "title": "For Cats",
+            "description": "Cozy corners, curious minds, happy cats.",
+            "image": "shopify://shop_images/Curious_Tabby_Cat_on_a_Cozy_Rug-2.png",
+            "button_label": "Shop now",
+            "collection": "cats"
+          }
+        },
+        "category3": {
+          "type": "category",
+          "settings": {
+            "title": "Everyday Essentials",
+            "description": "Simple things for happier pets.",
+            "image": "shopify://shop_images/Teal_Pet_Essentials_Still_Life.png",
+            "button_label": "Shop now"
+          }
+        }
+      },
+      "block_order": [
+        "category1",
+        "category2",
+        "category3"
+      ]
     },
     "featured": {
       "type": "featured-collection",
@@ -30,7 +65,40 @@
     },
     "benefits": {
       "type": "store-benefits",
-      "settings": {}
+      "settings": {},
+      "blocks": {
+        "highlight1": {
+          "type": "highlight",
+          "settings": {
+            "icon": "🐶",
+            "title": "Everything for dogs",
+            "description": "Food, treats, toys & walking essentials",
+            "collection": "dogs"
+          }
+        },
+        "highlight2": {
+          "type": "highlight",
+          "settings": {
+            "icon": "🐱",
+            "title": "Made for curious cats",
+            "description": "Mealtime, playtime & cozy corners",
+            "collection": "cats"
+          }
+        },
+        "highlight3": {
+          "type": "highlight",
+          "settings": {
+            "icon": "🎾",
+            "title": "Play more, love more",
+            "description": "Discover everyday pet favorites"
+          }
+        }
+      },
+      "block_order": [
+        "highlight1",
+        "highlight2",
+        "highlight3"
+      ]
     },
     "spotlight": {
       "type": "store-spotlight",
