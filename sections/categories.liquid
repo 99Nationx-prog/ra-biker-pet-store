@@ -1,4 +1,4 @@
-<section class="categories categories--visual page-width" aria-label="{{ section.settings.section_label | escape }}">
+<section class="categories categories--visual categories--horizontal page-width" aria-label="{{ section.settings.section_label | escape }}">
   <a class="category-card category-card--dogs" href="{{ section.settings.dog_link | default: routes.all_products_collection_url }}">
     <div class="category-photo">{% if section.settings.dog_image != blank %}{{ section.settings.dog_image | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'category-image' }}{% endif %}</div>
     <span class="category-icon"><svg viewBox="0 0 48 48" aria-hidden="true" focusable="false"><ellipse cx="11" cy="13" rx="5" ry="7" transform="rotate(-22 11 13)"/><ellipse cx="23" cy="9" rx="5" ry="7"/><ellipse cx="35" cy="13" rx="5" ry="7" transform="rotate(22 35 13)"/><ellipse cx="42" cy="24" rx="4" ry="6" transform="rotate(35 42 24)"/><path d="M9 35c1-7 9-14 15-14s14 7 15 14c1 6-4 9-10 7-4-2-6-2-10 0-6 2-11-1-10-7Z"/></svg></span>
@@ -17,7 +17,7 @@
   {% for block in section.blocks %}
     <a class="category-card category-card--extra" href="{{ block.settings.link | default: routes.all_products_collection_url }}" {{ block.shopify_attributes }}>
       <div class="category-photo">{% if block.settings.image != blank %}{{ block.settings.image | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'category-image' }}{% endif %}</div>
-      <div class="category-copy"><h2>{{ block.settings.title | escape }}</h2><p>{{ block.settings.description | escape }}</p><span class="category-arrow" aria-hidden="true">→</span></div>
+      {% if block.settings.icon_image != blank %}<span class="category-icon category-icon--custom">{{ block.settings.icon_image | image_url: width: 120 | image_tag: loading: 'lazy', alt: block.settings.title }}</span>{% elsif block.settings.icon != blank %}<span class="category-icon category-icon--emoji" aria-hidden="true">{{ block.settings.icon | escape }}</span>{% endif %}<div class="category-copy"><h2>{{ block.settings.title | escape }}</h2><p>{{ block.settings.description | escape }}</p><span class="category-arrow" aria-hidden="true">→</span></div>
     </a>
   {% endfor %}
 </section>
@@ -40,9 +40,9 @@
 {"type":"textarea","id":"essentials_description","label":"Essentials caption","default":"Simple things for happier pets."},
 {"type":"url","id":"essentials_link","label":"Essentials card link"}
 ],"blocks":[{"type":"extra_category","name":"Extra category card","settings":[
-{"type":"image_picker","id":"image","label":"Card photo"},
+{"type":"image_picker","id":"image","label":"Card background photo"},{"type":"image_picker","id":"icon_image","label":"Round category logo or icon"},{"type":"text","id":"icon","label":"Emoji icon (if no logo image)","default":"🐾"},
 {"type":"text","id":"title","label":"Card heading","default":"More pet favorites"},
 {"type":"textarea","id":"description","label":"Card caption","default":"Discover more for your pet."},
 {"type":"url","id":"link","label":"Card link"}
-]}],"max_blocks":12,"presets":[{"name":"Shop by pet"}]}
+]}],"max_blocks":24,"presets":[{"name":"Shop by pet"}]}
 {% endschema %}
