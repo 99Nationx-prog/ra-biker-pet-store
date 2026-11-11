@@ -16,45 +16,19 @@
     "categories": {
       "type": "categories",
       "settings": {
-        "heading": "Shop by pet",
-        "mobile_scroll": true
+        "section_label": "Shop by pet",
+        "dog_image": "shopify://shop_images/Happy_Golden_Retriever_Portrait-1.png",
+        "cat_image": "shopify://shop_images/Curious_Tabby_Cat_on_a_Cozy_Rug-2.png",
+        "essentials_image": "shopify://shop_images/Teal_Pet_Essentials_Still_Life.png",
+        "dog_title": "For Dogs",
+        "dog_description": "Walks, playtime and everything in between.",
+        "cat_title": "For Cats",
+        "cat_description": "Cozy corners, curious minds, happy cats.",
+        "essentials_title": "Everyday Essentials",
+        "essentials_description": "Simple things for happier pets."
       },
-      "blocks": {
-        "category1": {
-          "type": "category",
-          "settings": {
-            "title": "For Dogs",
-            "description": "Walks, playtime and everything in between.",
-            "image": "shopify://shop_images/Happy_Golden_Retriever_Portrait-1.png",
-            "button_label": "Shop now",
-            "collection": "dogs"
-          }
-        },
-        "category2": {
-          "type": "category",
-          "settings": {
-            "title": "For Cats",
-            "description": "Cozy corners, curious minds, happy cats.",
-            "image": "shopify://shop_images/Curious_Tabby_Cat_on_a_Cozy_Rug-2.png",
-            "button_label": "Shop now",
-            "collection": "cats"
-          }
-        },
-        "category3": {
-          "type": "category",
-          "settings": {
-            "title": "Everyday Essentials",
-            "description": "Simple things for happier pets.",
-            "image": "shopify://shop_images/Teal_Pet_Essentials_Still_Life.png",
-            "button_label": "Shop now"
-          }
-        }
-      },
-      "block_order": [
-        "category1",
-        "category2",
-        "category3"
-      ]
+      "blocks": {},
+      "block_order": []
     },
     "featured": {
       "type": "featured-collection",
