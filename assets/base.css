@@ -184,12 +184,14 @@
  .site-header .header-icon{width:19px;height:19px}
 }
 
-/* Mobile hero: anchor CTAs in the clear lower band, away from pet faces. */
+/* Mobile hero: anchor buttons to the entire hero, not the text block. */
 @media(max-width:600px){
- .hero--integrated .hero-inner{position:relative}
- .hero--integrated .hero-copy{position:relative;z-index:2}
+ .hero--integrated .hero-inner{position:relative;isolation:isolate}
+ .hero--integrated .hero-copy{position:static;z-index:auto}
+ .hero--integrated .hero-copy > :not(.hero-buttons){position:relative;z-index:2}
+ .hero--integrated .hero-photo{z-index:0}
  .hero--integrated .hero-buttons{
-   position:absolute;z-index:3;
+   position:absolute;z-index:4;
    left:18px;right:18px;bottom:30px;
    margin:0;max-width:none;
    display:flex;gap:10px;flex-wrap:nowrap;
