@@ -3,7 +3,7 @@
     <p class="eyebrow">A LITTLE MORE JOY, EVERY DAY</p>
     <h1>{{ section.settings.heading | escape }}</h1>
     <p class="hero-description">{{ section.settings.subheading | escape }}</p>
-    <div class="hero-buttons"><a class="button primary" href="{{ section.settings.dog_link | default: '/collections/dogs' }}">{{ section.settings.dog_label | escape }} →</a><a class="button outline" href="{{ section.settings.cat_link | default: '/collections/cats' }}">{{ section.settings.cat_label | escape }} →</a></div>
+    <div class="hero-buttons"><a class="button primary" href="{{ section.settings.dog_link | default: collections['dogs'].url | default: routes.all_products_collection_url }}">{{ section.settings.dog_label | escape }} →</a><a class="button outline" href="{{ section.settings.cat_link | default: collections['cats'].url | default: routes.all_products_collection_url }}">{{ section.settings.cat_label | escape }} →</a></div>
   </div>
   <div class="hero-photo">
     {% if section.settings.hero_image != blank %}
