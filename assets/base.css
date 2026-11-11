@@ -586,11 +586,10 @@ body{color:var(--ink)}
 @media(max-width:600px){.categories--horizontal{grid-auto-columns:min(72vw,270px)!important;gap:12px!important;padding-right:18px}.categories--horizontal>.category-card{height:330px;min-height:330px}}
 
 
-/* Horizontal categories: flex prevents Shopify editor block wrapping into a second row */
-.categories.categories--visual.categories--horizontal{display:flex!important;flex-flow:row nowrap!important;align-items:stretch!important;justify-content:flex-start!important;gap:14px!important;overflow-x:auto!important;overflow-y:hidden!important;scroll-snap-type:x mandatory;scrollbar-width:thin;max-width:100%;width:100%;box-sizing:border-box}
-.categories.categories--visual.categories--horizontal>.category-card{display:block!important;flex:0 0 clamp(210px,27vw,350px)!important;width:clamp(210px,27vw,350px)!important;max-width:none!important;min-width:210px!important;scroll-snap-align:start;aspect-ratio:0.76!important;height:auto!important;align-self:stretch}
-@media(max-width:900px){.categories.categories--visual.categories--horizontal>.category-card{flex-basis:clamp(190px,44vw,290px)!important;width:clamp(190px,44vw,290px)!important}}
-@media(max-width:600px){.categories.categories--visual.categories--horizontal>.category-card{flex:0 0 min(72vw,270px)!important;width:min(72vw,270px)!important;min-width:190px!important;aspect-ratio:.76!important}}
+/* Shop by pet: show three original-size cards, with additional cards offscreen in the same swipeable row. */
+.categories.categories--visual.categories--horizontal{display:flex!important;flex-flow:row nowrap!important;align-items:stretch!important;justify-content:flex-start!important;gap:10px!important;overflow-x:auto!important;overflow-y:hidden!important;scroll-snap-type:x proximity;scrollbar-width:thin;max-width:100%;width:100%;box-sizing:border-box}
+.categories.categories--visual.categories--horizontal>.category-card{display:block!important;flex:0 0 calc((100% - 20px)/3)!important;width:calc((100% - 20px)/3)!important;min-width:0!important;max-width:none!important;scroll-snap-align:start;aspect-ratio:.76!important;height:auto!important;min-height:0!important;align-self:stretch}
+@media(max-width:600px){.categories.categories--visual.categories--horizontal{gap:6px!important}.categories.categories--visual.categories--horizontal>.category-card{flex-basis:calc((100% - 12px)/3)!important;width:calc((100% - 12px)/3)!important}}
 /* Footer brand matches header and social links sit beneath the copyright */
 .footer-grid--custom{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
 .footer-brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;margin-bottom:10px}
