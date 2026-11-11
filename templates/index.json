@@ -85,14 +85,24 @@
     "promise": {
       "type": "store-promise",
       "settings": {}
+    },
+    "videos": {
+      "type": "pet-video-showcase",
+      "settings": {
+        "heading": "See their happy moments",
+        "description": "Short clips of playtime, grooming and everyday pet life."
+      },
+      "blocks": {},
+      "block_order": []
     }
   },
   "order": [
     "hero",
-    "benefits",
     "categories",
+    "benefits",
     "departments",
     "featured",
+    "videos",
     "lifestyle",
     "spotlight",
     "promise",
