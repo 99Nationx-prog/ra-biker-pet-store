@@ -13,6 +13,7 @@
       "type": "hero",
       "settings": {
         "hero_image": "shopify://shop_images/Golden_Retriever_and_Tabby_Cat_Cuddling.png",
+        "mobile_hero_image": "shopify://shop_images/Golden_Retriever_and_Tabby_Cuddle.png",
         "heading": "Better days for dogs & cats.",
         "subheading": "Thoughtfully chosen essentials for the companions we love.",
         "dog_label": "Shop Dogs",
