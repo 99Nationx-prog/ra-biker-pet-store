@@ -1,48 +1,65 @@
-/* RA BIKER responsive navigation: works in storefront and Shopify editor. */
+/* RA BIKER accessible off-canvas navigation drawer. */
 (() => {
   let lastTrigger = null;
-  const getParts = () => ({
+  const parts = () => ({
     toggle: document.querySelector('[data-mobile-menu-toggle]'),
-    menu: document.getElementById('MobileMenu')
+    menu: document.getElementById('MobileMenu'),
+    overlay: document.querySelector('[data-mobile-menu-overlay]')
   });
   function closeMenu(restoreFocus = false) {
-    const { toggle, menu } = getParts();
-    if (!toggle || !menu) return;
-    toggle.setAttribute('aria-expanded', 'false');
-    toggle.setAttribute('aria-label', 'Open navigation');
+    const { toggle, menu, overlay } = parts();
+    if (!menu) return;
     menu.hidden = true;
+    if (overlay) overlay.hidden = true;
+    document.body.classList.remove('mobile-drawer-open');
+    if (toggle) {
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Open shopping menu');
+    }
     if (restoreFocus && lastTrigger?.isConnected) lastTrigger.focus();
   }
   function openMenu() {
-    const { toggle, menu } = getParts();
-    if (!toggle || !menu) return;
+    const { toggle, menu, overlay } = parts();
+    if (!menu || !toggle) return;
     lastTrigger = toggle;
-    toggle.setAttribute('aria-expanded', 'true');
-    toggle.setAttribute('aria-label', 'Close navigation');
     menu.hidden = false;
-    menu.querySelector('a')?.focus();
+    if (overlay) overlay.hidden = false;
+    document.body.classList.add('mobile-drawer-open');
+    toggle.setAttribute('aria-expanded', 'true');
+    toggle.setAttribute('aria-label', 'Close shopping menu');
+    menu.querySelector('[data-mobile-menu-close]')?.focus();
   }
   document.addEventListener('click', event => {
-    const trigger = event.target.closest('[data-mobile-menu-toggle]');
-    if (trigger) {
+    if (event.target.closest('[data-mobile-menu-toggle]')) {
       event.preventDefault();
-      const { menu } = getParts();
+      const { menu } = parts();
       if (menu?.hidden) openMenu();
       else closeMenu(true);
-      return;
+    } else if (event.target.closest('[data-mobile-menu-close], [data-mobile-menu-overlay]')) {
+      event.preventDefault();
+      closeMenu(true);
+    } else if (event.target.closest('#MobileMenu a')) {
+      closeMenu();
     }
-    const { menu } = getParts();
-    if (menu && !menu.hidden && !event.target.closest('#MobileMenu')) closeMenu();
   });
   document.addEventListener('keydown', event => {
+    const { menu } = parts();
+    if (!menu || menu.hidden) return;
     if (event.key === 'Escape') {
-      const { menu } = getParts();
-      if (menu && !menu.hidden) { event.preventDefault(); closeMenu(true); }
+      event.preventDefault();
+      closeMenu(true);
+    } else if (event.key === 'Tab') {
+      const focusable = [...menu.querySelectorAll('a[href], button:not([disabled])')];
+      if (!focusable.length) return;
+      const first = focusable[0], last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault(); last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault(); first.focus();
+      }
     }
   });
   document.addEventListener('shopify:section:load', () => closeMenu());
   document.addEventListener('shopify:section:unload', () => closeMenu());
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 900) closeMenu();
-  });
+  window.addEventListener('resize', () => { if (window.innerWidth > 900) closeMenu(); });
 })();
