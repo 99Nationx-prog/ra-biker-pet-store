@@ -488,3 +488,22 @@ body{color:var(--ink)}
 .product-detail__accordion p,.product-detail__accordion .rte{font-size:14px;line-height:1.7;margin-top:15px}
 .product-detail__accordion a,.product-assurance a{text-decoration:underline;text-underline-offset:3px}
 @media(max-width:700px){.product-detail--premium{grid-template-columns:1fr;gap:24px;padding-top:20px}.product-detail__main-image{border-radius:16px}.product-detail__thumbs{grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}}
+
+/* Collection browsing and filtering */
+.collection-page--premium{padding-top:44px;padding-bottom:75px}
+.collection-page--premium>h1{font-size:clamp(32px,4vw,56px);letter-spacing:-.045em;margin:10px 0 18px}
+.collection-toolbar{display:flex;justify-content:space-between;align-items:center;gap:15px;border-top:1px solid #e3eaed;border-bottom:1px solid #e3eaed;padding:14px 0;margin:30px 0;font-size:14px}
+.collection-toolbar form{display:flex;align-items:center;gap:10px}
+.collection-toolbar select{padding:10px;border:1px solid #cbd9de;border-radius:9px;background:white}
+.collection-layout{display:grid;grid-template-columns:225px minmax(0,1fr);gap:26px}
+.collection-layout:not(:has(.collection-filters)){display:block}
+.collection-filters{border:1px solid #e1eaee;border-radius:15px;padding:17px;align-self:start}
+.collection-filters summary{cursor:pointer;font-weight:800;padding:9px 0}
+.collection-filter{border-top:1px solid #e3eaed;padding:9px 0}
+.collection-filter label{display:block;font-size:13px;margin:10px 0;line-height:1.5}
+.collection-filter input[type=number]{width:100%;padding:8px;border:1px solid #cbd9de;border-radius:7px}
+.collection-filters .button{margin-top:15px;width:100%;padding:12px}
+.collection-clear{display:block;text-align:center;margin-top:12px;text-decoration:underline;font-size:13px}
+.product-card__cta{display:inline-block;margin:8px 0 12px;color:#087fa5;font-weight:750;font-size:13px}
+@media(max-width:850px){.collection-layout{grid-template-columns:1fr}.collection-filters>details:not([open]){padding:0}.collection-filters>details{padding:0}.collection-filters{padding:10px 15px}}
+@media(max-width:500px){.collection-toolbar{flex-wrap:wrap}.collection-page--premium{padding-top:25px}.collection-layout{gap:14px}}
