@@ -73,14 +73,29 @@
         "q2",
         "q3"
       ]
+    },
+    "departments": {
+      "type": "shop-departments",
+      "settings": {}
+    },
+    "lifestyle": {
+      "type": "pet-lifestyle",
+      "settings": {}
+    },
+    "promise": {
+      "type": "store-promise",
+      "settings": {}
     }
   },
   "order": [
     "hero",
-    "benefits",
     "categories",
+    "departments",
     "featured",
+    "benefits",
+    "lifestyle",
     "spotlight",
+    "promise",
     "faq",
     "newsletter"
   ]
