@@ -17,3 +17,5 @@
 .ra-copy{width:45%;padding:6px 0 8px}
 .ra-copy h1{font-size:clamp(20px,4.7vw,36px)}
 }
+
+.ra-kit .ra-kit-lineup{display:block;width:100%;height:auto;mix-blend-mode:multiply}.ra-kit .ra-kit-labels{display:grid;grid-template-columns:25% 24% 14% 21% 16%;gap:0}.ra-kit-labels p{font-weight:600;overflow-wrap:normal}
