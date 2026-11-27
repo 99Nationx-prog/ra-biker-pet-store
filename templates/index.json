@@ -12,6 +12,7 @@
     "grooming": {
       "type": "ra-grooming",
       "settings": {
+        "product": "dog-grooming-vacuum-kit-7-in-1-cat-dog-hair-vacuum-brush-for-shedding-includes-rollers-deshedding-mitts-nail-paw-trimmer",
         "hero": "shopify://shop_images/3f44e407b571_26fdab7f-88fe-45a8-9e7b-a4bd7dbfa9eb_2.jpg",
         "step1": "shopify://shop_images/ra-biker-brush-hd.png",
         "step2": "shopify://shop_images/ra-biker-collect-hd.png",
