@@ -12,7 +12,10 @@
     "grooming": {
       "type": "ra-grooming",
       "settings": {
-        "hero": "shopify://shop_images/3f44e407b571_26fdab7f-88fe-45a8-9e7b-a4bd7dbfa9eb_2.jpg"
+        "hero": "shopify://shop_images/3f44e407b571_26fdab7f-88fe-45a8-9e7b-a4bd7dbfa9eb_2.jpg",
+        "step1": "shopify://shop_images/ra-brush.jpg",
+        "step2": "shopify://shop_images/ra-collect.jpg",
+        "step3": "shopify://shop_images/ra-empty.jpg"
       }
     }
   },
