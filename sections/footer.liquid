@@ -1,4 +1,15 @@
 <footer class="footer" aria-label="Store footer">
+<style>
+.ra-policy-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;color:#073e29;padding-top:8px;padding-bottom:12px}
+.ra-policy-links h2{font-size:16px;margin:0 0 8px;color:inherit}
+.ra-policy-links a{display:block;color:inherit;font-size:14px;line-height:1.5;padding:4px 0;text-decoration:none}
+.ra-policy-links a:hover,.ra-policy-links a:focus-visible{text-decoration:underline}
+@media(max-width:767px){.ra-policy-links{gap:10px}.ra-policy-links a{font-size:13px}}
+</style>
+<nav class="page-width ra-policy-links" aria-label="Customer support and legal policies">
+<div><h2>Customer Support</h2><a href="{{ pages['contact'].url }}">Contact Us</a><a href="{{ pages['ra-shipping-policy'].url }}">Shipping Policy</a><a href="{{ pages['ra-refund-policy'].url }}">Return &amp; Refund Policy</a></div>
+<div><h2>Legal &amp; Privacy</h2><a href="{{ pages['ra-privacy-policy'].url }}">Privacy Policy</a><a href="{{ pages['ra-terms-of-service'].url }}">Terms of Service</a><a href="{{ pages['ra-privacy-choices'].url }}">Your Privacy Choices</a></div>
+</nav>
 <div class="page-width footer-bottom">
   <div class="footer-copyright">© {{ 'now' | date: '%Y' }} {{ section.settings.copyright_name | escape }}{% if section.settings.bottom_text != blank %}<span>{{ section.settings.bottom_text | escape }}</span>{% endif %}</div>
   {% if section.settings.show_payment_icons %}<div class="footer-payment" aria-label="Accepted payment methods">{% for type in shop.enabled_payment_types %}<span class="footer-payment__icon">{{ type | payment_type_svg_tag }}</span>{% endfor %}</div>{% endif %}
