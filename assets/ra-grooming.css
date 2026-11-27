@@ -33,3 +33,14 @@
 .ra-groom .ra-lower-banner-copy{order:0;max-width:none;width:100%;padding:20px 14px 8px;position:relative;z-index:1}
 .ra-groom .ra-lower-banner-img{order:1;position:static;display:block;width:100%;height:auto;max-width:100%;object-fit:contain;object-position:center!important;z-index:auto;mask-image:linear-gradient(to bottom,transparent 0%,#000 18%);-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 18%)}
 }
+
+/* Clean cutout: no color key, masks or image-edge gradients. */
+.ra-groom .ra-lower-proof,.ra-groom .ra-lower-photo{background:#faf7ee}
+.ra-groom .ra-lower-photo img{width:100%;height:auto;object-fit:contain;mix-blend-mode:normal;mask-image:none;-webkit-mask-image:none}
+.ra-groom .ra-lower-banner-mobile-img{display:none}
+@media(max-width:767px){
+.ra-groom .ra-lower-banner{background:#faf7ee;overflow:hidden}
+.ra-groom .ra-lower-banner-copy{background:#073e29;padding:20px 14px;order:0}
+.ra-groom .ra-lower-banner-img{display:none}
+.ra-groom .ra-lower-banner-mobile-img{display:block;order:1;width:100%;height:auto;object-fit:contain;background:#faf7ee;padding:12px 0 0;mask-image:none;-webkit-mask-image:none}
+}
