@@ -9,8 +9,8 @@
 </head>
 <body>
 <a class="skip-link" href="#MainContent">Skip to content</a>
-{% section 'header' %}
+{% if request.page_type == 'index' or request.page_type == 'product' %}{% section 'ra-grooming-header' %}{% else %}{% section 'header' %}{% endif %}
 <main id="MainContent" role="main">{{ content_for_layout }}</main>
 {% section 'footer' %}
-{% render 'mobile-bottom-nav' %}
+{% unless request.page_type == 'index' or request.page_type == 'product' %}{% render 'mobile-bottom-nav' %}{% endunless %}
 </body></html>
