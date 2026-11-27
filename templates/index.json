@@ -12,65 +12,12 @@
     "grooming": {
       "type": "ra-grooming",
       "settings": {
+        "product": "dog-grooming-vacuum-kit-7-in-1-cat-dog-hair-vacuum-brush-for-shedding-includes-rollers-deshedding-mitts-nail-paw-trimmer",
         "hero": "shopify://shop_images/3f44e407b571_26fdab7f-88fe-45a8-9e7b-a4bd7dbfa9eb_2.jpg",
         "step1": "shopify://shop_images/ra-biker-brush-hd.png",
         "step2": "shopify://shop_images/ra-biker-collect-hd.png",
         "step3": "shopify://shop_images/ra-biker-empty-hd.png"
-      },
-      "blocks": {
-        "customer_review_1": {
-          "type": "customer_review",
-          "settings": {
-            "author": "",
-            "stars": 5,
-            "body": "",
-            "verified": false
-          }
-        },
-        "customer_review_2": {
-          "type": "customer_review",
-          "settings": {
-            "author": "",
-            "stars": 5,
-            "body": "",
-            "verified": false
-          }
-        },
-        "customer_review_3": {
-          "type": "customer_review",
-          "settings": {
-            "author": "",
-            "stars": 5,
-            "body": "",
-            "verified": false
-          }
-        },
-        "customer_review_4": {
-          "type": "customer_review",
-          "settings": {
-            "author": "",
-            "stars": 5,
-            "body": "",
-            "verified": false
-          }
-        },
-        "customer_review_5": {
-          "type": "customer_review",
-          "settings": {
-            "author": "",
-            "stars": 5,
-            "body": "",
-            "verified": false
-          }
-        }
-      },
-      "block_order": [
-        "customer_review_1",
-        "customer_review_2",
-        "customer_review_3",
-        "customer_review_4",
-        "customer_review_5"
-      ]
+      }
     }
   },
   "order": [
