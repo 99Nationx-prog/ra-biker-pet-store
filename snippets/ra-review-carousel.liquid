@@ -1,0 +1,32 @@
+{% assign review_data = review_product.metafields.judgeme.review_widget_json_ld.value %}
+{% if review_data.review.size > 0 %}
+<section class="ra-imported-reviews" aria-label="Product reviews">
+<h2>Customer Reviews</h2>
+<p>{{ review_data.aggregateRating.ratingValue | escape }} / 5 · {{ review_data.aggregateRating.reviewCount | escape }} reviews</p>
+<div class="ra-review-track" tabindex="0" aria-label="Swipe to see more reviews">
+{% for item in review_data.review %}
+{% if item.reviewBody != blank %}
+<article class="ra-review-card">
+<div class="ra-review-stars" aria-label="{{ item.reviewRating.ratingValue }} out of 5 stars">{% assign score = item.reviewRating.ratingValue | plus: 0 %}{% for i in (1..5) %}{% if i <= score %}★{% else %}☆{% endif %}{% endfor %}</div>
+<strong>{{ item.author.name | escape }}</strong>
+<p>{{ item.reviewBody | escape }}</p>
+{% for photo in item.image limit: 1 %}<img src="{{ photo | escape }}" alt="Review photo" loading="lazy" width="90" height="90">{% endfor %}
+</article>
+{% endif %}
+{% endfor %}
+</div>
+<p class="ra-review-source">Includes reviews imported from the supplier marketplace.</p>
+<div class="ra-review-nav"><button type="button" aria-label="Previous reviews" data-direction="-1">‹</button><button type="button" aria-label="Next reviews" data-direction="1">›</button></div>
+{% if review_product.metafields.judgeme.widget != blank %}
+<details class="ra-review-write"><summary>Write a Review</summary>
+<div id="judgeme_product_reviews" class="jdgm-widget jdgm-review-widget" data-product-title="{{ review_product.title | escape }}" data-id="{{ review_product.id }}" data-product-id="{{ review_product.id }}" data-widget="review" data-auto-install="false" data-entry-point="review_widget.js" data-entry-key="review-widget/main.js">{{ review_product.metafields.judgeme.widget }}</div>
+</details>
+{% endif %}
+</section>
+<style>
+.ra-imported-reviews{padding:24px 0;color:#073e29;margin-top:18px}.ra-imported-reviews>h2,.ra-imported-reviews>p{text-align:center}.ra-imported-reviews .ra-review-track{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 2px;scrollbar-width:thin}.ra-imported-reviews .ra-review-card{flex:0 0 calc((100% - 24px)/3);min-width:0;box-sizing:border-box;background:#fff;border:1px solid #d9ded7;border-radius:12px;padding:14px;scroll-snap-align:start;overflow-wrap:anywhere}.ra-imported-reviews .ra-review-stars{color:#a77900;white-space:nowrap}.ra-imported-reviews .ra-review-card p{font-size:14px;line-height:1.45}.ra-imported-reviews .ra-review-card img{object-fit:cover;border-radius:6px;max-width:100%}.ra-imported-reviews .ra-review-nav{display:flex;justify-content:center;gap:12px}.ra-imported-reviews .ra-review-nav button,.ra-imported-reviews .ra-review-write>summary{background:#073e29;color:white;border:0;border-radius:24px;padding:9px 18px;cursor:pointer}.ra-imported-reviews .ra-review-write>summary{width:max-content;margin:12px auto;list-style:none}.ra-imported-reviews .ra-review-source{font-size:12px}.ra-imported-reviews .ra-review-write .jdgm-rev-widg__body,.ra-imported-reviews .ra-review-write .jdgm-histogram,.ra-imported-reviews .ra-review-write .jdgm-gallery{display:none!important}@media(max-width:600px){.ra-imported-reviews .ra-review-card{flex-basis:calc((100% - 16px)/3);padding:8px}.ra-imported-reviews .ra-review-track{gap:8px}.ra-imported-reviews .ra-review-card p{font-size:12px}.ra-imported-reviews .ra-review-stars{font-size:12px}}
+</style>
+<script>
+(function(){var root=document.currentScript.previousElementSibling.previousElementSibling;if(!root||!root.classList.contains('ra-imported-reviews'))return;var track=root.querySelector('.ra-review-track');root.querySelectorAll('[data-direction]').forEach(function(b){b.addEventListener('click',function(){track.scrollBy({left:Number(b.dataset.direction)*(track.firstElementChild.offsetWidth+12),behavior:'smooth'});});});})();
+</script>
+{% endif %}
