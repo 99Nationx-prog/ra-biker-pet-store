@@ -7,16 +7,16 @@
 {% assign ra_rating = section.settings.rating | default: '4.5' %}
 {% assign ra_review_count = section.settings.review_count | default: '658' %}
 <style>
-#ra-{{ section.id }} .ra-rating-line{display:flex;align-items:center;flex-wrap:nowrap;white-space:nowrap;gap:4px;text-decoration:none;font-size:clamp(10px,1.9vw,16px);line-height:1.3}
-#ra-{{ section.id }} .ra-rating-line .ra-stars{position:relative;display:inline-block;white-space:nowrap;color:#b5b5b5;font-size:clamp(15px,3.2vw,24px);line-height:1;letter-spacing:0}
+#ra-{{ section.id }} .ra-rating-line{display:flex;align-items:center;flex-wrap:nowrap;white-space:nowrap;gap:4px;text-decoration:none;font-size:clamp(10.2px,1.938vw,16.32px);line-height:1.3}
+#ra-{{ section.id }} .ra-rating-line .ra-stars{position:relative;display:inline-block;white-space:nowrap;color:#b5b5b5;font-size:clamp(15.3px,3.264vw,24.48px);line-height:1;letter-spacing:0}
 #ra-{{ section.id }} .ra-stars span{position:absolute;inset:0 auto 0 0;overflow:hidden;color:#f4b400;white-space:nowrap}
 #ra-{{ section.id }} .ra-price-line{display:flex;align-items:center;flex-wrap:nowrap;white-space:nowrap;gap:clamp(3px,.7vw,10px)}
-#ra-{{ section.id }} .ra-price-line>span:first-child{font-size:clamp(20px,4.5vw,48px);flex-shrink:0}
+#ra-{{ section.id }} .ra-price-line>span:first-child{font-size:clamp(20.4px,4.59vw,48.96px);flex-shrink:0}
 #ra-{{ section.id }} .ra-price-line s,#ra-{{ section.id }} .ra-price-line .ra-save{flex-shrink:0}
-@media(max-width:767px){#ra-{{ section.id }} .ra-price-line>span:first-child{font-size:clamp(18px,3.8vw,30px)}#ra-{{ section.id }} .ra-price-line s{font-size:clamp(10px,1.8vw,14px)}#ra-{{ section.id }} .ra-price-line .ra-save{font-size:clamp(9px,1.65vw,12px);padding:4px 5px}}
-#ra-{{ section.id }} .ra-price-line s{color:#666;font-size:clamp(12px,2.6vw,23px);font-weight:700}
-#ra-{{ section.id }} .ra-save{background:#d50020;color:white;border-radius:7px;padding:4px 7px;font-size:clamp(10px,2.1vw,18px);font-weight:700;white-space:nowrap;line-height:1.2}
-@media(max-width:767px){#ra-{{ section.id }} .ra-rating-line .ra-stars{font-size:clamp(13px,2.8vw,21px)}#ra-{{ section.id }} .ra-price-line s{font-size:clamp(10px,1.8vw,14px)}#ra-{{ section.id }} .ra-price-line .ra-save{font-size:clamp(9px,1.65vw,12px);padding:4px 5px}}
+@media(max-width:767px){#ra-{{ section.id }} .ra-price-line>span:first-child{font-size:clamp(18.36px,3.876vw,30.6px)}#ra-{{ section.id }} .ra-price-line s{font-size:clamp(10.2px,1.836vw,14.28px)}#ra-{{ section.id }} .ra-price-line .ra-save{font-size:clamp(9.18px,1.683vw,12.24px);padding:4px 5px}}
+#ra-{{ section.id }} .ra-price-line s{color:#666;font-size:clamp(12.24px,2.652vw,23.46px);font-weight:700}
+#ra-{{ section.id }} .ra-save{background:#d50020;color:white;border-radius:7px;padding:4px 7px;font-size:clamp(10.2px,2.142vw,18.36px);font-weight:700;white-space:nowrap;line-height:1.2}
+@media(max-width:767px){#ra-{{ section.id }} .ra-rating-line .ra-stars{font-size:clamp(13.26px,2.856vw,21.42px)}#ra-{{ section.id }} .ra-price-line s{font-size:clamp(10.2px,1.836vw,14.28px)}#ra-{{ section.id }} .ra-price-line .ra-save{font-size:clamp(9.18px,1.683vw,12.24px);padding:4px 5px}}
 </style>
 <section class="ra-groom" id="ra-{{ section.id }}">
 <div class="ra-hero">
