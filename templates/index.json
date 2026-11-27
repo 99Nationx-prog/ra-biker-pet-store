@@ -18,7 +18,11 @@
         "step3": "shopify://shop_images/ra-biker-empty-hd.png",
         "lower_benefit_image": "shopify://shop_images/ra-biker-dog-vacuum-transparent.png",
         "rating": "4.5",
-        "review_count": "658"
+        "review_count": "658",
+        "benefit1": "Cleaner Home",
+        "benefit2": "Quiet Operation (≈52 dB)*",
+        "benefit3": "Pet-Friendly & Safe",
+        "benefit4": "Easy to Use"
       }
     }
   },
