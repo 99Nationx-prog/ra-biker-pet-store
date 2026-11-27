@@ -44,3 +44,15 @@
 .ra-groom .ra-lower-banner-img{display:none}
 .ra-groom .ra-lower-banner-mobile-img{display:block;order:1;width:100%;height:auto;object-fit:contain;background:#faf7ee;padding:12px 0 0;mask-image:none;-webkit-mask-image:none}
 }
+
+/* Mobile only: larger proof cutout, compact closing image and adjoining footer. */
+@media(max-width:767px){
+  .ra-groom .ra-lower-proof{grid-template-columns:minmax(0,54fr) minmax(0,46fr);gap:0}
+  .ra-groom .ra-lower-photo{overflow:visible}
+  .ra-groom .ra-lower-photo img{width:100%;max-width:none;transform:scale(1.06);transform-origin:left center}
+  .ra-groom .ra-lower-proof ul{padding:8px 0 8px 8px;gap:10px;position:relative}
+  .ra-groom .ra-lower-banner-mobile-img{width:88%;max-width:88%;align-self:center;padding:0;margin:8px auto 0}
+  .ra-groom{padding-bottom:4px}
+  body:has(.ra-groom) .footer{background:#faf7ee;padding:8px 0 calc(85px + env(safe-area-inset-bottom))}
+  body:has(.ra-groom) .footer-bottom{margin-top:0;padding-top:8px;border-top:0}
+}
